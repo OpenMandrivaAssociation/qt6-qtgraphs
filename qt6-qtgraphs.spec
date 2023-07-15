@@ -32,6 +32,9 @@ BuildRequires:	cmake(Qt%{major}Quick3D)
 BuildRequires:	cmake(Qt%{major}Test)
 BuildRequires:	cmake(Qt%{major}Qml)
 BuildRequires:	cmake(Qt%{major}Qml)
+BuildRequires:	pkgconfig(xkbcommon)
+BuildRequires:	pkgconfig(xkbfile)
+BuildRequires:	pkgconfig(vulkan)
 BuildRequires:	qt%{major}-cmake
 License:	LGPLv3/GPLv3/GPLv2
 
