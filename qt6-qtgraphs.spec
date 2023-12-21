@@ -1,11 +1,11 @@
-#define beta rc
+%define beta beta1
 #define snapshot 20200627
 %define major 6
 
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtgraphs
-Version:	6.6.1
+Version:	6.7.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -43,11 +43,16 @@ Qt %{major} Graphs module
 
 %define extra_files_Graphs \
 %{_qtdir}/qml/QtGraphs
+%{_qtdir}/qml/QtGraphs3D
 
 %define extra_devel_files_Graphs \
-%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphsplugin*.cmake
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphsplugin*.cmake \
+%{_qtdir}/qml/QtGraphs3D
 
-%qt6libs Graphs
+%define extra_devel_files_Graphs2D \
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphs2Dplugin*.cmake
+
+%qt6libs Graphs Graphs2D
 
 %package examples
 Summary: Examples for the Qt %{major} Graphs module
@@ -57,7 +62,8 @@ Group: Development/KDE and Qt
 Examples for the Qt %{major} Graphs module
 
 %files examples
-%{_qtdir}/examples/graphs
+%{_qtdir}/examples/graphs2d
+%{_qtdir}/examples/graphs3d
 
 %prep
 %autosetup -p1 -n qtgraphs%{!?snapshot:-everywhere-src-%{version}%{?beta:-%{beta}}}
