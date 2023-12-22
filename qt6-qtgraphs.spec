@@ -20,6 +20,7 @@ BuildRequires:	ninja
 BuildRequires:	cmake(Qt%{major}Core)
 BuildRequires:	cmake(Qt%{major}DBus)
 BuildRequires:	cmake(Qt%{major}Qml)
+BuildRequires:	cmake(Qt%{major}QmlCore)
 BuildRequires:	cmake(Qt%{major}Gui)
 BuildRequires:	cmake(Qt%{major}Widgets)
 BuildRequires:	cmake(Qt%{major}OpenGL)
