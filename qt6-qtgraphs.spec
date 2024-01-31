@@ -1,4 +1,4 @@
-%define beta beta1
+%define beta beta2
 #define snapshot 20200627
 %define major 6
 
@@ -43,16 +43,17 @@ Qt %{major} Graphs module
 
 %define extra_files_Graphs \
 %{_qtdir}/qml/QtGraphs
-%{_qtdir}/qml/QtGraphs3D
+#{_qtdir}/qml/QtGraphs3D
+# ^^^ seems to have gone away in 6.7-beta2, need to make sure that's intentional
 
 %define extra_devel_files_Graphs \
-%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphsplugin*.cmake \
-%{_qtdir}/qml/QtGraphs3D
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphsplugin*.cmake
 
 %define extra_devel_files_Graphs2D \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphs2Dplugin*.cmake
 
-%qt6libs Graphs Graphs2D
+%qt6libs Graphs 
+# Graphs2D is gone in 6.7-beta2
 
 %package examples
 Summary: Examples for the Qt %{major} Graphs module
@@ -62,8 +63,7 @@ Group: Development/KDE and Qt
 Examples for the Qt %{major} Graphs module
 
 %files examples
-%{_qtdir}/examples/graphs2d
-%{_qtdir}/examples/graphs3d
+%{_qtdir}/examples/graphs
 
 %prep
 %autosetup -p1 -n qtgraphs%{!?snapshot:-everywhere-src-%{version}%{?beta:-%{beta}}}
