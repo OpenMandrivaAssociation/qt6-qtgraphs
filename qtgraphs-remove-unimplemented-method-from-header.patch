@@ -1,11 +1,14 @@
-diff -up qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h.omv~ qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h
---- qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h.omv~	2024-03-04 14:02:02.437325952 +0100
-+++ qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h	2024-03-04 14:02:09.761394333 +0100
-@@ -64,7 +64,6 @@ public:
+diff -up qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h.1~ qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h
+--- qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h.1~	2024-02-10 01:51:40.000000000 +0100
++++ qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h	2024-03-04 17:13:55.101517152 +0100
+@@ -62,10 +62,6 @@ public:
+     void resetThemeDirty() { m_themeDirty = false; };
+     void resetColorTheme();
  
-     int graphSeriesCount() const;
-     void setGraphSeriesCount(int count);
+-    int graphSeriesCount() const;
+-    void setGraphSeriesCount(int count);
 -    QColor graphSeriesColor(int index) const;
- 
+-
      QGraphTheme::ColorTheme colorTheme() const;
      void setColorTheme(const ColorTheme &newColorTheme);
+ 

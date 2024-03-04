@@ -6,7 +6,7 @@
 
 Name:		qt6-qtgraphs
 Version:	6.7.0
-Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}2
+Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}3
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qtgraphs-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
