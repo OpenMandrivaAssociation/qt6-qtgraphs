@@ -6,13 +6,14 @@
 
 Name:		qt6-qtgraphs
 Version:	6.7.0
-Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
+Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}2
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qtgraphs-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
 %else
 Source:		http://download.qt-project.org/%{?beta:development}%{!?beta:official}_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}%{?beta:-%{beta}}/submodules/qtgraphs-everywhere-src-%{version}%{?beta:-%{beta}}.tar.xz
 %endif
+Patch0:		qtgraphs-remove-unimplemented-method-from-header.patch
 Group:		System/Libraries
 Summary:	Qt %{major} Graphs module
 BuildRequires:	cmake

@@ -1,0 +1,11 @@
+diff -up qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h.omv~ qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h
+--- qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h.omv~	2024-03-04 14:02:02.437325952 +0100
++++ qtgraphs-everywhere-src-6.7.0-beta3/src/graphs2d/themes/qgraphtheme.h	2024-03-04 14:02:09.761394333 +0100
+@@ -64,7 +64,6 @@ public:
+ 
+     int graphSeriesCount() const;
+     void setGraphSeriesCount(int count);
+-    QColor graphSeriesColor(int index) const;
+ 
+     QGraphTheme::ColorTheme colorTheme() const;
+     void setColorTheme(const ColorTheme &newColorTheme);
