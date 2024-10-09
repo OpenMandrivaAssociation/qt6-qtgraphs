@@ -5,7 +5,7 @@
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtgraphs
-Version:	6.7.3
+Version:	6.8.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -52,7 +52,7 @@ Qt %{major} Graphs module
 %define extra_devel_files_Graphs2D \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphs2Dplugin*.cmake
 
-%qt6libs Graphs 
+%qt6libs Graphs GraphsWidgets
 # Graphs2D is gone in 6.7-beta2
 
 %package examples
