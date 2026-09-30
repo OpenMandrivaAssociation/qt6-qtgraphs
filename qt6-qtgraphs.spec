@@ -5,7 +5,7 @@
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtgraphs
-Version:	6.11.2
+Version:	6.12.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -58,11 +58,13 @@ Qt %{major} Graphs module
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphsplugin*.cmake \
 %{_qtdir}/sbom/*
 
-%define extra_devel_files_Graphs2D \
-%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6Graphs2Dplugin*.cmake
+%define extra_files_Graphs2DImpl \
+%{_qtdir}/qml/QtGraphs2D
 
-%qt6libs Graphs GraphsWidgets
-# Graphs2D is gone in 6.7-beta2
+%define extra_devel_files_Graphs2DImpl \
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplplugin*.cmake
+
+%qt6libs Graphs GraphsWidgets Graphs2DImpl
 
 %package examples
 Summary: Examples for the Qt %{major} Graphs module
