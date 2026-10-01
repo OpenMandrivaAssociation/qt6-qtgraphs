@@ -64,6 +64,12 @@ Qt %{major} Graphs module
 %define extra_devel_files_Graphs2DImpl \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplplugin*.cmake
 
+# Graphs2DImpl is built with NO_PRIVATE_MODULE, but the generated cmake
+# config still requires Qt6Graphs2DImplPrivate, which is not installed.
+# The generator emits one rich dependency, "(cmake(qt6...) or cmake(Qt6...))".
+# It does not start with "cmake(", so the filter must not be anchored.
+%global __requires_exclude cmake\\(qt6graphs2dimplprivate\\)|cmake\\(Qt6Graphs2DImplPrivate\\)
+
 %qt6libs Graphs GraphsWidgets Graphs2DImpl
 
 %package examples
